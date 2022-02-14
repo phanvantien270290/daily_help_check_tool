@@ -1,0 +1,32 @@
+{
+    "name": "daily_help_check_tool",
+    "version": "1.0.0",
+    "description": "",
+    "main": "gulpfile.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": " node script/index.js",
+        "build": "gulp "
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "puppeteer": "'~'13.3.1"
+    },
+    "devDependencies": {
+        "del": "'~'6.0.0",
+        "gulp": "'~'4.0.2",
+        "gulp-concat": "'~'2.6.1",
+        "nodemon": "'~'2.0.15",
+        "webpack": "'~'5.68.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/phanvantien270290/daily_help_check_tool.git"
+    },
+    "bugs": {
+        "url": "https://github.com/phanvantien270290/daily_help_check_tool/issues"
+    },
+    "homepage": "https://github.com/phanvantien270290/daily_help_check_tool#readme"
+
+}
