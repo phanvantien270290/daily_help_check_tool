@@ -5,6 +5,7 @@
     "main": "gulpfile.js",
     "scripts": {
         "start": " node app.js",
+        "test": "jest",
         "build": "gulp "
     },
     "author": "",
@@ -16,6 +17,7 @@
         "del": "~6.0.0",
         "gulp": "~4.0.2",
         "gulp-concat": "~2.6.1",
+        "jest": "~27.5.1",
         "nodemon": "~2.0.15",
         "webpack": "~5.68.0"
     },
