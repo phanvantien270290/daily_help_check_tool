@@ -1,8 +1,14 @@
 const puppeteer = require('puppeteer');
-(async() => {
 
-    const url = 'https://ccintegration.ca1.qualtrics.com/jfe/form/SV_5uM5eLTssRDAq46?Q_DL=8Wam8COckPNvyA8_5uM5eLTssRDAq46_CGC_jyhd37okfzhzF6z&Q_CHL=email'
-    const browser = await puppeteer.launch({ headless: false });
+const dailyCheckTool = async() => {
+
+
+
+
+    const firstName = 'Tien';
+    const lastName = 'Phan';
+    const url = 'https://ccintegration.ca1.qualtrics.com/jfe/form/SV_5uM5eLTssRDAq46?Q_DL=8cMTGYL9QnWLNpj_5uM5eLTssRDAq46_CGC_jyhd37okfzhzF6z&Q_CHL=email'
+    const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
 
     await Promise.all([
@@ -26,10 +32,11 @@ const puppeteer = require('puppeteer');
     await page.waitForTimeout(1000);
     //STEP 2
     await page.waitForSelector('input.QR-QID57-1');
-    await page.waitForTimeout(1000);
-    await page.$eval('input.QR-QID57-1', el => el.value = 'Tien');
-    await page.waitForTimeout(1000);
-    await page.$eval('input.QR-QID57-2', el => el.value = 'Phan');
+
+    await page.evaluate((a, b) => {
+        document.querySelector('input.QR-QID57-1').value = a;
+        document.querySelector('input.QR-QID57-2').value = b;
+    }, firstName, lastName)
     await page.waitForTimeout(1000);
     await page.waitForSelector('input.QR-QID57-1');
     await page.waitForTimeout(1000);
@@ -70,6 +77,7 @@ const puppeteer = require('puppeteer');
     await page.waitForTimeout(1000);
     await page.click("input#NextButton");
     console.log("daily help check successfuly")
+    return 'Successfully'
 
-
-})();
+};
+module.exports = dailyCheckTool
